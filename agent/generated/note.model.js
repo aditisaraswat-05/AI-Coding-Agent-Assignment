@@ -4,21 +4,24 @@ const NoteSchema = mongoose.Schema({
     title: {
         type: String,
         required: true,
-        trim: true
+        trim: true,
+        index: true
     },
     content: {
         type: String,
         required: true
     },
-    tags: [{
-        type: String,
-        index: true
-    }],
     category: {
         type: String,
+        trim: true,
         index: true,
         default: 'General'
     },
+    tags: [{
+        type: String,
+        trim: true,
+        index: true
+    }],
     folder: {
         type: String,
         index: true,
